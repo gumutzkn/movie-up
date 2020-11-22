@@ -2,6 +2,7 @@ import React from 'react'
 import { withRouter } from 'react-router-dom';
 import imdb from "../../assets/img/IMDB-icon.png"
 import { MovieContext } from '../../context/MovieContext';
+import queryString from 'query-string';
 
 import "./searchresults.scss";
 
@@ -12,10 +13,12 @@ class SearchResults extends React.Component {
     const favorites = JSON.parse(localStorage.getItem("favorites"));
     const { movies, addFavorite, deleteFavorite } = this.context;
     const { history } = this.props;
+    const values = queryString.parse(this.props.location.search);
+    const movieParams = values.movieName;
 
     return (
       <main className="search__results">
-        <h1 className="search__results--heading">Search Results <span className="search__results--span">Godfather</span></h1>
+        <h1 className="search__results--heading">Search Results <span className="search__results--span">{movieParams}</span></h1>
         <div className="moviescontainer">
           {movies.length > 0 ?
             movies.map(movie => (
@@ -32,7 +35,6 @@ class SearchResults extends React.Component {
                   >
                     
                     <i className="fas fa-heart added"></i>
-                    {/* <i className="fas fa-heart added"></i> */}
                   </div>
                   ): (
                     <div 
@@ -41,7 +43,6 @@ class SearchResults extends React.Component {
                   >
                     
                     <i className="far fa-heart add"></i>
-                    {/* <i className="fas fa-heart added"></i> */}
                   </div>
                   )  }
                 </div>

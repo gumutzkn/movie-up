@@ -1,5 +1,6 @@
 import React, { createContext } from 'react';
 import axios from 'axios';
+import queryString from 'query-string';
 
 export const MovieContext = createContext();
 
@@ -9,27 +10,26 @@ export class MovieProvider extends React.Component {
     this.state = {
       movies: [],
       inputValue: '',
-      favorites: [],
-      inFavorite: true
+      favorites: []
     }
   }
 
   onSubmit = (e) => {
-    e.preventDefault();
+    const values = queryString.parse(this.props.location.search);
+    const movieParams = values.movieName;
 
-    if (this.state.inputValue) {
+    if (movieParams) {
       axios.get(
-        `${process.env.REACT_APP_API_URL}/?apikey=${process.env.REACT_APP_API_KEY}&s=${this.state.inputValue}`
+        `${process.env.REACT_APP_API_URL}/?apikey=${process.env.REACT_APP_API_KEY}&s=${movieParams}`
       ).then(res => {
         const items = res.data.Search;
         this.setState({ movies: items });
       }).catch(e => this.setState({ movies: [] }));
-      console.log(this.state.movies)
-      this.setState({
-        inputValue: ''
-      });
     }
+  }
 
+  changeMovies = (val) => {
+    this.setState({ movies: val })
   }
 
   onChange = (e) => {
@@ -77,6 +77,7 @@ export class MovieProvider extends React.Component {
           onChange: this.onChange,
           addFavorite: this.addFavorite,
           deleteFavorite: this.deleteFavorite,
+          changeMovies: this.changeMovies
         }}
       >
         {this.props.children}

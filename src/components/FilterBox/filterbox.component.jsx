@@ -38,7 +38,7 @@ export default class FilterBox extends Component {
         </div>
   
         <div className="filterbox__button">
-          <a href="/">Search <span className="filterbox__button--arrow">&#8594;</span></a>
+          <button onClick={onSubmit}>Search <span className="filterbox__button--arrow">&#8594;</span></button>
         </div>
       </section>
     )

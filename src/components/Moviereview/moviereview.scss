@@ -76,6 +76,32 @@
         margin-left: 1rem;
       }
 
+
+      .add {
+        background-color: #F5C518;
+
+        span {
+          color: #fff;
+        }
+
+        i {
+          color: #fff;
+        }
+      }
+
+      .added {
+        background-color: white;
+        border: 1px solid #F5C518;
+
+        span {
+          color: #F5C518;
+        }
+
+        i {
+          color: #F5C518;
+        }
+      }
+
       &__favbtn {
         display: flex;
         justify-content: center;
@@ -88,8 +114,16 @@
         border-radius: 8px;
         margin-right: 3rem;
 
-        img {
-          width: 18%;
+        &:focus {
+          outline: none;
+        }
+
+        &:hover {
+          cursor: pointer;
+        }
+
+        i {
+          font-size: 1.9rem;
         }
 
         span {

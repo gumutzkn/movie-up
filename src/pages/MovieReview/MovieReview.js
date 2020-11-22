@@ -10,7 +10,8 @@ export default class MovieReview extends Component {
     super(props);
 
     this.state = {
-      movieData: []
+      movieData: [],
+      genres: []
     }
   }
 
@@ -20,18 +21,19 @@ export default class MovieReview extends Component {
     axios.get(
       `${process.env.REACT_APP_API_URL}/?apikey=${process.env.REACT_APP_API_KEY}&i=${id}&plot=full`
     ).then(res => {
+      const genres = res.data.Genre.split(',')
       this.setState({
-        movieData: res.data
+        movieData: res.data,
+        genres
       })
-      console.log(this.state.movieData)
-    })
+    }).catch(err => console.log(err))
   }
 
   render() {
     return (
       <>
         <NavBottom />
-        <Moviereview movieData={this.state.movieData} />
+        <Moviereview genres={this.state.genres} movieData={this.state.movieData} />
       </>    
     )
   }

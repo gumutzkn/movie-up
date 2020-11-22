@@ -7,12 +7,8 @@ import "./homefilter.scss"
 class HomeFilter extends Component {
   static contextType = MovieContext;
 
-  goToResults = () => {
-    console.log(this.context)
-  }
-
   render() {
-    const { onChange, inputValue, onSubmit } = this.context;
+    const { onChange, inputValue } = this.context;
 
     return (
       <section className="filter">
@@ -31,19 +27,22 @@ class HomeFilter extends Component {
         </select>
   
         <div className="filter__searchbox">
-          <form className="search">
+          <form 
+            action="/results"
+            className="search">
             <input
               onChange={onChange}
               value={inputValue}
               className="search__input" 
               type="text" 
-              placeholder="Enter movie name here" />
+              placeholder="Enter movie name here"
+              name="movieName" />
             <button className="search__button" type="submit"><i className="fas fa-search"></i></button>
           </form>
         </div>
   
         <div className="filter__button">
-          <button 
+          <button         
             type="submit"
           >
             Search <span className="filter__button--arrow">&#8594;</span>

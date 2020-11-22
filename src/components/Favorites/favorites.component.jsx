@@ -27,9 +27,10 @@ class Favorites extends React.Component {
                   style={{ backgroundImage: `url(${favorite.movie.Poster})` }}  
                 >
                   <div className="image__container--type">Action</div>
-                  <div className="image__container--favbtn">
-                    <i 
-                      onClick={() => deleteFavorite(favorite.movie)}
+                  <div
+                    onClick={() => deleteFavorite(favorite.movie)} 
+                    className="image__container--favbtn">
+                    <i                    
                       className="fas fa-heart added"
                     ></i>
                     {/* <i className="far fa-heart add"></i> */}

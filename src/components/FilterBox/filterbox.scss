@@ -119,7 +119,9 @@
       margin-bottom: .2rem;
     }
 
-    a {
+    button {
+      background-color: transparent;
+      border: none;
       font-size: 1.7rem;
       font-weight: 600;
       display: flex;
@@ -128,6 +130,14 @@
       height: 100%;
       width: 100%;
       color: #fff;
+
+      &:hover {
+        cursor: pointer;
+      }
+
+      &:focus {
+        outline: none;
+      }
     }
   }
 }
