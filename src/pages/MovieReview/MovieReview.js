@@ -19,21 +19,24 @@ export default class MovieReview extends Component {
     const id = this.props.match.params.id
 
     axios.get(
-      `http://www.omdbapi.com/?apikey=8e70dc5&i=${id}&plot=full`
+      `${process.env.REACT_APP_API_URL}/?apikey=${process.env.REACT_APP_API_KEY}&i=${id}&plot=full`
     ).then(res => {
       const genres = res.data.Genre.split(',')
       this.setState({
         movieData: res.data,
         genres
       })
-    }).catch(err => console.log(err))
+      console.log(this.state.movieData)
+    })
   }
 
   render() {
     return (
       <>
         <NavBottom />
-        <Moviereview genres={this.state.genres} movieData={this.state.movieData} />
+        <Moviereview 
+          movieData={this.state.movieData}
+          genres={this.state.genres} />
       </>    
     )
   }

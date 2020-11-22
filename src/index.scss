@@ -1,4 +1,18 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+/*
+  0 - 600px:      Phone
+  600 - 900px:    Tablet portrait
+  900 - 1200px:   Tablet landscape
+  [1200 - 1800] is where our normal styles apply
+  1800px + :      Big desktop
+  $breakpoint arguement choices:
+  - phone
+  - tab-port
+  - tab-land
+  - big-desktop
+  ORDER: Base + typography > general layout + grid > page layout > components
+  1em = 16px
+*/
 
 *,
 *::before,
@@ -11,6 +25,21 @@
 html {
   font-size: 62.5%;
   font-family: 'Poppins', sans-serif;
+
+  @media only screen and (max-width: 75em) {
+    //1200px
+    font-size: 56.25%;
+  }
+
+  @media only screen and (max-width: 56.25em) {
+    // 900px
+    font-size: 50%; //1 rem = 8px, 8/16 = 50%
+  }
+
+  // @media only screen and (max-width: 37.5em) {
+  //   //600px
+  //   @content;
+  // }
 }
 
 a {

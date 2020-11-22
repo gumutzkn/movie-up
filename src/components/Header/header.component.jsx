@@ -18,14 +18,16 @@ export default function Header() {
         </div>
         <div className="header__navbar--searchbox">
           <table className="search">
-            <tr>
-              <td>
-                <input className="search__input" type="text" placeholder="Enter movie name here" />
-              </td>
-              <td>
-                <Link to="/"><i className="fas fa-search"></i></Link>
-              </td>
-            </tr>
+            <tbody>
+              <tr>
+                <td>
+                  <input className="search__input" type="text" placeholder="Enter movie name here" />
+                </td>
+                <td>
+                  <Link to="/"><i className="fas fa-search"></i></Link>
+                </td>
+              </tr>
+            </tbody>
           </table>
         </div>
       </nav>    

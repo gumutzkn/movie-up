@@ -19,7 +19,7 @@ class Favorites extends React.Component {
         <h1 className="favorite__results--heading">Favorites</h1>
         <div className="moviescontainer">
 
-          {favorites.length > 0 ?
+          {favorites && favorites.length > 0 ?
             favorites.map((favorite, index) => (
               <div key={index} className="moviescontainer__movie moviescontainer__movie--1">
                 <div 

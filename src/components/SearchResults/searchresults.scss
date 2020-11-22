@@ -5,6 +5,11 @@
   margin: auto;
   margin-bottom: 10rem;
 
+  @media only screen and (max-width: 56.25em) {
+    // 900px
+    width: 80%;
+  }
+
   &--heading {
     font-size: 4.5rem;
     margin: 8rem 0;

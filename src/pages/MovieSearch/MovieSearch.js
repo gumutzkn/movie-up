@@ -20,7 +20,7 @@ export default class MovieSearch extends Component {
 
     if (movieParams) {
       axios.get(
-        `http://www.omdbapi.com/?apikey=8e70dc5&s=${movieParams}`
+        `${process.env.REACT_APP_API_URL}/?apikey=${process.env.REACT_APP_API_KEY}&s=${movieParams}`
       ).then(res => {
         const items = res.data.Search;
         changeMovies(items);
@@ -37,5 +37,4 @@ export default class MovieSearch extends Component {
       </>
     )
   }
-  
 }

@@ -13,6 +13,19 @@
 
   padding: 2rem;
 
+
+  @media only screen and (max-width: 56.25em) {
+    // <= 900px
+    // background-color: red;
+    width: 80%;
+  }
+
+  @media only screen and (max-width: 37.5em) {
+    //600px
+    width: 95%;
+    flex-direction: column;
+  }
+
   &__select {
     width: 13rem;
     padding: 1rem 3rem;
@@ -25,6 +38,11 @@
     border: 1px solid #F3F3F3;
     background-color: #F3F3F3;
     cursor: pointer;
+
+    @media only screen and (max-width: 37.5em) {
+      //600px
+      width: 100%;
+    }
 
     /* Replace default styling of arrow */
     appearance: none;
@@ -51,6 +69,12 @@
     margin-right: 1rem;
     border-radius: 8px;
     background-color: #F3F3F3;
+
+    @media only screen and (max-width: 37.5em) {
+      //600px
+      margin-right: 0;
+      width: 100%;
+    }
 
     .search {
       width: 100%;
