@@ -6,6 +6,23 @@
   grid-template-columns: 15vw 1fr;
   grid-column-gap: 2rem;
 
+  @media only screen and (max-width: 75em) {
+    // <= 1200px
+    grid-template-columns: 35vw 1fr;
+  }
+
+  @media only screen and (max-width: 56.25em) {
+    // 900px
+    grid-template-columns: 30vw 1fr;
+    width: 80%;
+  }
+
+  @media only screen and (max-width: 37.5em) {
+    //600px
+    width: 90%;
+    grid-template-columns: repeat(auto-fit, minmax(50vw, 1fr));
+  }
+
   &__img {
     height: 40vh;
     // width: 23vw;
@@ -13,9 +30,30 @@
     background-repeat: no-repeat;
     background-size: cover;
     border-radius: 3rem;
+
+    @media only screen and (max-width: 75em) {
+      // <= 1200px
+      height: 60vh;
+    }
+
+    @media only screen and (max-width: 56.25em) {
+      // 900px
+      height: 45vh;
+    }
+
+    @media only screen and (max-width: 37.5em) {
+      //600px
+      height: 50vh;
+      width: 100%;
+      margin-bottom: 2rem;
+    }
   }
 
   &__texts {
+
+    @media only screen and (max-width: 37.5em) {
+      //600px
+    }
 
     &--paragraph {
       padding-right: 3.5rem;
@@ -27,12 +65,24 @@
           display: flex;
           width: 40%;
           justify-content: space-between;
+
+          @media only screen and (max-width: 37.5em) {
+            //600px
+            width: 80%;
+          }
         }
 
         li {
           background-color: #F5C518;
           padding: 1.2rem 3rem;
           border-radius: 1rem;
+
+          @media only screen and (max-width: 37.5em) {
+            //600px
+            padding: 1.5rem 4.4rem;
+            font-size: 2rem;
+            margin-right: 2rem;
+          }
         }
       }
 
@@ -42,8 +92,11 @@
         font-weight: 400;
         color: rgba(0, 0, 0, 0.5);
         margin-top: 2.5rem;
-        height: 18vh;
-        // background-color: red;
+
+        @media only screen and (max-width: 37.5em) {
+          //600px
+          font-size: 2rem;
+        }
       }
 
       span {
@@ -114,6 +167,13 @@
         border-radius: 8px;
         margin-right: 3rem;
 
+        @media only screen and (max-width: 37.5em) {
+          //600px
+          padding: 1.5rem 4.4rem;
+          font-size: 2rem;
+          margin-right: 2rem;
+        }
+
         &:focus {
           outline: none;
         }
@@ -131,6 +191,11 @@
           font-size: 1.5rem;
           font-weight: 500;
           color: #fff;
+
+          @media only screen and (max-width: 37.5em) {
+            //600px
+            font-size: 1.9rem;
+          }
         }
       }
     }

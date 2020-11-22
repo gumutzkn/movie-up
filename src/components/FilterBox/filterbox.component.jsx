@@ -26,13 +26,14 @@ export default class FilterBox extends Component {
         </select>
   
         <div className="filterbox__searchbox">
-          <form className="search" onSubmit={onSubmit}>
+          <form action="/results" className="search" onSubmit={onSubmit}>
             <input 
               value={inputValue}
               onChange={onChange}
               className="search__input" 
               type="text" 
-              placeholder="Enter movie name here" />
+              placeholder="Enter movie name here"
+              name="movieName" />
             <button className="search__button" type="submit"><i className="fas fa-search"></i></button>
           </form>
         </div>
